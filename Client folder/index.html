@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/png" href="/thirdeye.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ThirdEye</title>
+    <script id="mantine-color-scheme-script">
+      // Immediately invoked function to set the color scheme
+      // This prevents the flash of light mode before dark mode is applied
+      (function() {
+        try {
+          var colorScheme = localStorage.getItem('mantine-color-scheme-value') || 'auto';
+          if (colorScheme === 'auto') {
+            colorScheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+          }
+          document.documentElement.setAttribute('data-mantine-color-scheme', colorScheme);
+        } catch (e) {}
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
