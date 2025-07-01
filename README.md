@@ -1,1 +1,1 @@
-# Training-workflow
+AI detection and classification project
